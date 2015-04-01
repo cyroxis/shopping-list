@@ -1,9 +1,9 @@
 package com.brandenwilson.shoppinglist.ui.login;
 
-import com.brandenwilson.shoppinglist.tests.common.services.ShoppingListApi;
-import com.brandenwilson.shoppinglist.tests.modules.login.LoginInteractor;
-import com.brandenwilson.shoppinglist.tests.modules.login.LoginPresenter;
-import com.brandenwilson.shoppinglist.tests.modules.login.LoginView;
+import com.brandenwilson.shoppinglist.core.common.services.ShoppingListApi;
+import com.brandenwilson.shoppinglist.core.modules.login.LoginInteractor;
+import com.brandenwilson.shoppinglist.core.modules.login.LoginPresenter;
+import com.brandenwilson.shoppinglist.core.modules.login.LoginView;
 import com.brandenwilson.shoppinglist.dependency.AppModule;
 
 import javax.inject.Singleton;

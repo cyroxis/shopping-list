@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.brandenwilson.shoppinglist.R;
-import com.brandenwilson.shoppinglist.tests.modules.login.LoginView;
+import com.brandenwilson.shoppinglist.core.modules.login.LoginView;
 import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
 import com.brandenwilson.shoppinglist.reactive.Subscriber;
 import com.brandenwilson.shoppinglist.ui.BaseActivity;
