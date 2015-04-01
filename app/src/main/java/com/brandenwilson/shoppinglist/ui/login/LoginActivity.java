@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.brandenwilson.shoppinglist.R;
-import com.brandenwilson.shoppinglist.core.modules.login.LoginView;
+import com.brandenwilson.shoppinglist.tests.modules.login.LoginView;
 import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
 import com.brandenwilson.shoppinglist.reactive.Subscriber;
 import com.brandenwilson.shoppinglist.ui.BaseActivity;
@@ -15,6 +15,7 @@ import com.brandenwilson.shoppinglist.ui.BaseActivity;
 import javax.inject.Inject;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 import rx.android.widget.OnTextChangeEvent;
 import rx.android.widget.WidgetObservable;
 
@@ -68,6 +69,12 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        interactionHandler.updateView();
+    }
+
+    @Override
     public void setEmail(String email) {
         this.email.setText(email);
     }
@@ -85,5 +92,10 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     public void disableLoginButton() {
         login.setEnabled(false);
+    }
+
+    @OnClick(R.id.button_login)
+    void onLoginClicked() {
+        interactionHandler.onLoginClicked();
     }
 }

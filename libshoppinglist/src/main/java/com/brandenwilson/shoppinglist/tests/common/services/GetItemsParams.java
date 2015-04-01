@@ -1,6 +1,6 @@
-package com.brandenwilson.shoppinglist.core.common.services;
+package com.brandenwilson.shoppinglist.tests.common.services;
 
-import com.brandenwilson.shoppinglist.core.common.services.responses.GetItemsResponse;
+import com.brandenwilson.shoppinglist.tests.common.services.responses.GetItemsResponse;
 
 public class GetItemsParams {
     public interface Callback {

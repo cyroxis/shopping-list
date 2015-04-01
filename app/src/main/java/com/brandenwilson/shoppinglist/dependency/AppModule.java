@@ -1,14 +1,13 @@
 package com.brandenwilson.shoppinglist.dependency;
 
-import com.brandenwilson.shoppinglist.core.common.models.Item;
-import com.brandenwilson.shoppinglist.core.common.models.User;
-import com.brandenwilson.shoppinglist.core.common.models.UserProfileInformation;
-import com.brandenwilson.shoppinglist.core.common.services.GetItemsParams;
-import com.brandenwilson.shoppinglist.core.common.services.ShoppingListApi;
-import com.brandenwilson.shoppinglist.core.common.services.parameters.LoginApiParams;
-import com.brandenwilson.shoppinglist.core.common.services.responses.GetItemsResponse;
+import com.brandenwilson.shoppinglist.tests.common.models.Item;
+import com.brandenwilson.shoppinglist.tests.common.models.User;
+import com.brandenwilson.shoppinglist.tests.common.models.UserProfileInformation;
+import com.brandenwilson.shoppinglist.tests.common.services.GetItemsParams;
+import com.brandenwilson.shoppinglist.tests.common.services.ShoppingListApi;
+import com.brandenwilson.shoppinglist.tests.common.services.parameters.LoginApiParams;
+import com.brandenwilson.shoppinglist.tests.common.services.responses.GetItemsResponse;
 import com.brandenwilson.shoppinglist.ui.MainActivity;
-import com.brandenwilson.shoppinglist.ui.login.LoginModule;
 
 import java.util.Collections;
 

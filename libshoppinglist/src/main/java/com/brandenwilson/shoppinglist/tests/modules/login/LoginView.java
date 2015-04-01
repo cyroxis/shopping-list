@@ -1,4 +1,4 @@
-package com.brandenwilson.shoppinglist.core.modules.login;
+package com.brandenwilson.shoppinglist.tests.modules.login;
 
 
 public interface LoginView {
@@ -13,5 +13,6 @@ public interface LoginView {
         void setEmail(String email);
         void setPassword(String password);
         void onLoginClicked();
+        void updateView();
     }
 }

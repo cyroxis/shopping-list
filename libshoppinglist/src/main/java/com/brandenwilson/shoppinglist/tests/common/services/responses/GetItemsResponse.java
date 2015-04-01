@@ -1,6 +1,6 @@
-package com.brandenwilson.shoppinglist.core.common.services.responses;
+package com.brandenwilson.shoppinglist.tests.common.services.responses;
 
-import com.brandenwilson.shoppinglist.core.common.models.Item;
+import com.brandenwilson.shoppinglist.tests.common.models.Item;
 
 import java.util.List;
 

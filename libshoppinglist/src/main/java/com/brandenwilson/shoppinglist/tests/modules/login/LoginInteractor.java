@@ -1,9 +1,9 @@
-package com.brandenwilson.shoppinglist.core.modules.login;
+package com.brandenwilson.shoppinglist.tests.modules.login;
 
-import com.brandenwilson.shoppinglist.core.common.models.Credentials;
-import com.brandenwilson.shoppinglist.core.common.models.User;
-import com.brandenwilson.shoppinglist.core.common.services.ShoppingListApi;
-import com.brandenwilson.shoppinglist.core.common.services.parameters.LoginApiParams;
+import com.brandenwilson.shoppinglist.tests.common.models.Credentials;
+import com.brandenwilson.shoppinglist.tests.common.models.User;
+import com.brandenwilson.shoppinglist.tests.common.services.ShoppingListApi;
+import com.brandenwilson.shoppinglist.tests.common.services.parameters.LoginApiParams;
 
 public class LoginInteractor implements LoginApiParams.Callback{
 

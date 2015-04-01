@@ -1,6 +1,6 @@
-package com.brandenwilson.shoppinglist.core.common.services.parameters;
+package com.brandenwilson.shoppinglist.tests.common.services.parameters;
 
-import com.brandenwilson.shoppinglist.core.common.models.User;
+import com.brandenwilson.shoppinglist.tests.common.models.User;
 
 public class LoginApiParams {
 

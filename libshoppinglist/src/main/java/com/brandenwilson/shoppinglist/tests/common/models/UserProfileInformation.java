@@ -1,4 +1,4 @@
-package com.brandenwilson.shoppinglist.core.common.models;
+package com.brandenwilson.shoppinglist.tests.common.models;
 
 public class UserProfileInformation {
     public final String name;
