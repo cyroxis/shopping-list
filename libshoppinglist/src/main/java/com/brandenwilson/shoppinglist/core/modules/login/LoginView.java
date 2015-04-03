@@ -2,7 +2,6 @@ package com.brandenwilson.shoppinglist.core.modules.login;
 
 
 public interface LoginView {
-
     void setEmail(String email);
     void dismiss();
     void enableLoginButton();

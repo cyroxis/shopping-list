@@ -13,8 +13,8 @@ import dagger.Provides;
 
 @Module(
         library = true,
-        injects = { LoginActivity.class },
-        addsTo = AppModule.class
+        addsTo = AppModule.class,
+        injects = { LoginActivity.class }
 )
 public class LoginModule {
 

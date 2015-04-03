@@ -1,7 +1,5 @@
 package com.brandenwilson.shoppinglist.core.common.models;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class Credentials {
     public final String email;
     public final String password;
@@ -12,15 +10,23 @@ public class Credentials {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        } else if (obj instanceof Credentials) {
-            Credentials credentials = (Credentials) obj;
-            return StringUtils.equals(email, credentials.email) &&
-                    StringUtils.equals(password, credentials.password);
-        } else {
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Credentials that = (Credentials) o;
+
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null)
             return false;
-        }
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = email != null ? email.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
     }
 }

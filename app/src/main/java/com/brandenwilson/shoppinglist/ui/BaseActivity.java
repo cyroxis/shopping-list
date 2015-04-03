@@ -1,24 +1,18 @@
 package com.brandenwilson.shoppinglist.ui;
 
 import android.app.ActionBar;
-import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.app.Fragment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
+import com.brandenwilson.shoppinglist.R;
 
 import butterknife.ButterKnife;
 
-public class BaseActivity extends ActionBarActivity {
-
-    @Override
-    public final void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-    }
+public abstract class BaseActivity extends ActionBarActivity {
 
     @Override
     public void setContentView(int layoutResID) {
@@ -50,5 +44,12 @@ public class BaseActivity extends ActionBarActivity {
     @Override
     public ActionBar getActionBar() {
         throw new IllegalArgumentException("Use Support Action Bar");
+    }
+
+    protected void showFragment(Fragment fragment) {
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame_main_content, fragment)
+                .commit();
     }
 }

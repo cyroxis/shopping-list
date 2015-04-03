@@ -17,12 +17,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.verifyZeroInteractions;
 
-public class LoginPresenterTest {
+public class LoginPresenterTests {
 
     @Mock
     private LoginInteractor loginInteractor;
 
-    @Mock LoginView loginView;
+    @Mock
+    private LoginView loginView;
 
     private LoginPresenter loginPresenter;
 

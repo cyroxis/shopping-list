@@ -17,4 +17,28 @@ public class Item {
         this.notes = notes;
         this.checked = checked;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Item item = (Item) o;
+
+        if (checked != item.checked) return false;
+        if (quantity != item.quantity) return false;
+        if (name != null ? !name.equals(item.name) : item.name != null) return false;
+        if (notes != null ? !notes.equals(item.notes) : item.notes != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + quantity;
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
+        result = 31 * result + (checked ? 1 : 0);
+        return result;
+    }
 }

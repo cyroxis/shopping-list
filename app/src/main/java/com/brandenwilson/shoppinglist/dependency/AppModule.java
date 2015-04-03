@@ -9,7 +9,7 @@ import com.brandenwilson.shoppinglist.core.common.services.parameters.LoginApiPa
 import com.brandenwilson.shoppinglist.core.common.services.responses.GetItemsResponse;
 import com.brandenwilson.shoppinglist.ui.MainActivity;
 
-import java.util.Collections;
+import java.util.Arrays;
 
 import javax.inject.Singleton;
 
@@ -19,7 +19,7 @@ import dagger.Provides;
 @Module(
         library = true,
         complete = false,
-        injects = { MainActivity.class }
+        injects = {MainActivity.class}
 )
 public class AppModule {
 
@@ -34,9 +34,9 @@ public class AppModule {
 
             @Override
             public void getItems(GetItemsParams getItemsParams) {
-                getItemsParams.callback.receivedItemsResponse(new GetItemsResponse(Collections.<Item>emptyList()));
+                getItemsParams.callback.receivedItemsResponse(new GetItemsResponse(Arrays.asList(new Item("Milk"), new Item("Eggs"), new Item("Bacon"), new Item("Ham"))));
             }
+
         };
     }
-
 }

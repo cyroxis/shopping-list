@@ -15,7 +15,7 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyZeroInteractions;
 
-public class TestLoginInteractor {
+public class LoginInteractorTests {
 
     @Mock
     ShoppingListApi shoppingListApi;
