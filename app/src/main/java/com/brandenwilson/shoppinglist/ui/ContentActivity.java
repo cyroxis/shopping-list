@@ -7,12 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.brandenwilson.shoppinglist.R;
+import com.brandenwilson.shoppinglist.dependency.ActivityModule;
 import com.brandenwilson.shoppinglist.ui.items.ItemsFragment;
 
-public class MainActivity extends BaseActivity {
+import java.util.Arrays;
+import java.util.List;
+
+public class ContentActivity extends BaseActivity {
 
     public static Intent intent(Context context) {
-        return new Intent(context, MainActivity.class);
+        return new Intent(context, ContentActivity.class);
     }
 
     @Override
@@ -21,8 +25,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         setTitle("Hello World");
 
-        //startActivity(LoginActivity.intent(this));
         showFragment(new ItemsFragment());
+    }
+
+    @Override
+    protected List<? extends Object> getActivityModules() {
+        return Arrays.asList(new ActivityModule(this));
     }
 
     @Override

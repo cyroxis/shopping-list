@@ -8,9 +8,12 @@ import android.widget.EditText;
 
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.core.modules.login.LoginView;
-import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
+import com.brandenwilson.shoppinglist.dependency.ActivityModule;
 import com.brandenwilson.shoppinglist.reactive.Subscriber;
 import com.brandenwilson.shoppinglist.ui.BaseActivity;
+
+import java.util.Arrays;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -40,11 +43,15 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ObjectGraphHolder.inject(this, new LoginModule());
         setContentView(R.layout.activity_login);
         setTitle(R.string.login);
 
         interactionHandler.registerView(this);
+    }
+
+    @Override
+    protected List<? extends Object> getActivityModules() {
+        return Arrays.asList(new ActivityModule(this), new LoginModule());
     }
 
     @Override

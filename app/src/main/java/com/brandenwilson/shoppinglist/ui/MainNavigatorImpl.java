@@ -2,14 +2,14 @@ package com.brandenwilson.shoppinglist.ui;
 
 import android.content.Context;
 
-import com.brandenwilson.shoppinglist.core.modules.Navigator;
+import com.brandenwilson.shoppinglist.core.modules.MainNavigator;
 import com.brandenwilson.shoppinglist.ui.login.LoginActivity;
 
-public class NavigatorImpl implements Navigator{
+public class MainNavigatorImpl implements MainNavigator {
 
     protected final Context context;
 
-    public NavigatorImpl(Context context) {
+    public MainNavigatorImpl(Context context) {
         this.context = context;
     }
 
@@ -20,6 +20,6 @@ public class NavigatorImpl implements Navigator{
 
     @Override
     public void showItems() {
-        context.startActivity(MainActivity.intent(context));
+        context.startActivity(ContentActivity.intent(context));
     }
 }

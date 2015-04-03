@@ -8,12 +8,12 @@ import android.widget.ListView;
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsView;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsViewModel;
-import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
 import com.brandenwilson.shoppinglist.ui.BaseFragment;
 
 import javax.inject.Inject;
 
 import butterknife.InjectView;
+import dagger.ObjectGraph;
 import timber.log.Timber;
 
 public class ItemsFragment extends BaseFragment implements ItemsView {
@@ -30,8 +30,12 @@ public class ItemsFragment extends BaseFragment implements ItemsView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ObjectGraphHolder.inject(this, new ItemsModule(getActivity()));
         interactionHandler.registerView(this);
+    }
+
+    @Override
+    protected void onInjectDependencies(ObjectGraph objectGraph) {
+        super.onInjectDependencies(objectGraph.plus(new ItemsModule()));
     }
 
     @Override

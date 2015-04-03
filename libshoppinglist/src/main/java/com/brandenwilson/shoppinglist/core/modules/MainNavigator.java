@@ -1,6 +1,6 @@
 package com.brandenwilson.shoppinglist.core.modules;
 
-public interface Navigator {
+public interface MainNavigator {
 
     public void showLogin();
     public void showItems();

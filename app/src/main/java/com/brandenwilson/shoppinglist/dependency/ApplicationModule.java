@@ -7,7 +7,7 @@ import com.brandenwilson.shoppinglist.core.common.services.GetItemsParams;
 import com.brandenwilson.shoppinglist.core.common.services.ShoppingListApi;
 import com.brandenwilson.shoppinglist.core.common.services.parameters.LoginApiParams;
 import com.brandenwilson.shoppinglist.core.common.services.responses.GetItemsResponse;
-import com.brandenwilson.shoppinglist.ui.MainActivity;
+import com.brandenwilson.shoppinglist.ui.ContentActivity;
 
 import java.util.Arrays;
 
@@ -19,9 +19,10 @@ import dagger.Provides;
 @Module(
         library = true,
         complete = false,
-        injects = {MainActivity.class}
+        injects = {ContentActivity.class}
 )
-public class AppModule {
+public class ApplicationModule {
+
 
     @Singleton
     @Provides

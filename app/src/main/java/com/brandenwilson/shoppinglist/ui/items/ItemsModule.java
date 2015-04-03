@@ -1,13 +1,12 @@
 package com.brandenwilson.shoppinglist.ui.items;
 
-import android.content.Context;
-
 import com.brandenwilson.shoppinglist.core.common.services.ShoppingListApi;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsInteractor;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsNavigator;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsPresenter;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsView;
-import com.brandenwilson.shoppinglist.dependency.AppModule;
+import com.brandenwilson.shoppinglist.dependency.ApplicationModule;
+import com.brandenwilson.shoppinglist.ui.FragmentContainer;
 
 import javax.inject.Singleton;
 
@@ -16,16 +15,11 @@ import dagger.Provides;
 
 @Module(
         library = true,
-        addsTo = AppModule.class,
-        injects = {ItemsFragment.class}
+        complete = false,
+        addsTo = ApplicationModule.class,
+        injects = { ItemsFragment.class }
 )
 public class ItemsModule {
-
-    private final Context context;
-
-    public ItemsModule(Context context) {
-        this.context = context;
-    }
 
     @Singleton
     @Provides
@@ -35,9 +29,8 @@ public class ItemsModule {
 
     @Singleton
     @Provides
-    public ItemsNavigator providesItemsNavigator() {
-        //TODO fix
-        return new ItemsNavigatorImpl(context, null, 0);
+    public ItemsNavigator providesItemsNavigator(FragmentContainer fragmentContainer) {
+            return new ItemsNavigatorImpl(fragmentContainer);
     }
 
     @Singleton

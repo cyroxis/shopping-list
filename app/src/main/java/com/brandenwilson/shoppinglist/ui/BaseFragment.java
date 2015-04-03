@@ -10,8 +10,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
+import dagger.ObjectGraph;
 
 public abstract class BaseFragment extends Fragment {
+
+    private ObjectGraph objectGraph;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        onInjectDependencies(getBaseActivity().getActivityObjectGraph());
+    }
+
+    protected void onInjectDependencies(ObjectGraph objectGraph) {
+        objectGraph.inject(this);
+    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -36,4 +50,5 @@ public abstract class BaseFragment extends Fragment {
     public BaseActivity getBaseActivity() {
         return (BaseActivity) getActivity();
     }
+
 }

@@ -4,7 +4,7 @@ import com.brandenwilson.shoppinglist.core.common.services.ShoppingListApi;
 import com.brandenwilson.shoppinglist.core.modules.login.LoginInteractor;
 import com.brandenwilson.shoppinglist.core.modules.login.LoginPresenter;
 import com.brandenwilson.shoppinglist.core.modules.login.LoginView;
-import com.brandenwilson.shoppinglist.dependency.AppModule;
+import com.brandenwilson.shoppinglist.dependency.ApplicationModule;
 
 import javax.inject.Singleton;
 
@@ -13,7 +13,7 @@ import dagger.Provides;
 
 @Module(
         library = true,
-        addsTo = AppModule.class,
+        addsTo = ApplicationModule.class,
         injects = { LoginActivity.class }
 )
 public class LoginModule {
