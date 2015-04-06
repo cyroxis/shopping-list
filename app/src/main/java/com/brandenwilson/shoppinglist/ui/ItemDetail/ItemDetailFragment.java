@@ -1,4 +1,4 @@
-package com.brandenwilson.shoppinglist.ui.ItemDetail;
+package com.brandenwilson.shoppinglist.ui.itemdetail;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.core.common.models.Item;
 import com.brandenwilson.shoppinglist.core.modules.itemdetail.ItemDetailView;
-import com.brandenwilson.shoppinglist.ui.BaseFragment;
+import com.brandenwilson.shoppinglist.ui.common.BaseFragment;
 
 import javax.inject.Inject;
 

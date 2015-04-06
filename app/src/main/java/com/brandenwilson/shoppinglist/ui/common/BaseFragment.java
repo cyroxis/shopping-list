@@ -1,4 +1,4 @@
-package com.brandenwilson.shoppinglist.ui;
+package com.brandenwilson.shoppinglist.ui.common;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -13,8 +13,6 @@ import butterknife.ButterKnife;
 import dagger.ObjectGraph;
 
 public abstract class BaseFragment extends Fragment {
-
-    private ObjectGraph objectGraph;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

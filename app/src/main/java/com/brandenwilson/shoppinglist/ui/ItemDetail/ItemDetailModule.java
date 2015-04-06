@@ -1,4 +1,4 @@
-package com.brandenwilson.shoppinglist.ui.ItemDetail;
+package com.brandenwilson.shoppinglist.ui.itemdetail;
 
 import com.brandenwilson.shoppinglist.core.common.models.Item;
 import com.brandenwilson.shoppinglist.core.modules.itemdetail.ItemDetailInteractor;

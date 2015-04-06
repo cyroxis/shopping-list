@@ -1,4 +1,4 @@
-package com.brandenwilson.shoppinglist.ui;
+package com.brandenwilson.shoppinglist.ui.common;
 
 import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;

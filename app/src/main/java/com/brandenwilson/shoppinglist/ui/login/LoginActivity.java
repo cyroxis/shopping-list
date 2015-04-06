@@ -10,7 +10,7 @@ import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.core.modules.login.LoginView;
 import com.brandenwilson.shoppinglist.dependency.ActivityModule;
 import com.brandenwilson.shoppinglist.reactive.Subscriber;
-import com.brandenwilson.shoppinglist.ui.BaseActivity;
+import com.brandenwilson.shoppinglist.ui.common.BaseActivity;
 
 import java.util.Arrays;
 import java.util.List;

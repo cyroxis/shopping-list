@@ -8,10 +8,13 @@ import android.view.MenuItem;
 
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.dependency.ActivityModule;
+import com.brandenwilson.shoppinglist.ui.common.BaseActivity;
 import com.brandenwilson.shoppinglist.ui.items.ItemsFragment;
 
 import java.util.Arrays;
 import java.util.List;
+
+import timber.log.Timber;
 
 public class ContentActivity extends BaseActivity {
 
@@ -25,7 +28,7 @@ public class ContentActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         setTitle("Hello World");
 
-        showFragment(new ItemsFragment());
+        getFragmentContainer().showFragment(new ItemsFragment());
     }
 
     @Override
@@ -39,7 +42,6 @@ public class ContentActivity extends BaseActivity {
         return true;
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -49,5 +51,14 @@ public class ContentActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Timber.w("Back Pressed");
+
+        if(!getFragmentContainer().onBackPressed()) {
+            super.onBackPressed();
+        }
     }
 }

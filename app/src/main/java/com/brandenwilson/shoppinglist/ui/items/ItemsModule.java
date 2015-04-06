@@ -6,7 +6,7 @@ import com.brandenwilson.shoppinglist.core.modules.items.ItemsNavigator;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsPresenter;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsView;
 import com.brandenwilson.shoppinglist.dependency.ApplicationModule;
-import com.brandenwilson.shoppinglist.ui.FragmentContainer;
+import com.brandenwilson.shoppinglist.ui.common.FragmentContainer;
 
 import javax.inject.Singleton;
 

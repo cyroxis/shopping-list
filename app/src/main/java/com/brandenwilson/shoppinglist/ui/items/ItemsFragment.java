@@ -8,7 +8,7 @@ import android.widget.ListView;
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsView;
 import com.brandenwilson.shoppinglist.core.modules.items.ItemsViewModel;
-import com.brandenwilson.shoppinglist.ui.BaseFragment;
+import com.brandenwilson.shoppinglist.ui.common.BaseFragment;
 
 import javax.inject.Inject;
 

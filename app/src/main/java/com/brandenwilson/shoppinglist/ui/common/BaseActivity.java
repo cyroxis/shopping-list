@@ -1,7 +1,6 @@
-package com.brandenwilson.shoppinglist.ui;
+package com.brandenwilson.shoppinglist.ui.common;
 
 import android.app.ActionBar;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -92,13 +91,6 @@ public abstract class BaseActivity extends ActionBarActivity {
 
     protected void toast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    public void showFragment(Fragment fragment) {
-        getFragmentManager()
-                .beginTransaction()
-                .replace(R.id.frame_main_content, fragment)
-                .commit();
     }
 
     public FragmentContainer getFragmentContainer() {

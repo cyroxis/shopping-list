@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.core.common.models.Item;
-import com.brandenwilson.shoppinglist.ui.ViewHolderAdapter;
+import com.brandenwilson.shoppinglist.ui.common.ViewHolderAdapter;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
