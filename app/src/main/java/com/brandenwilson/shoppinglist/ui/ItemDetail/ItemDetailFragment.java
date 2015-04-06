@@ -1,5 +1,6 @@
 package com.brandenwilson.shoppinglist.ui.ItemDetail;
 
+import android.os.Bundle;
 import android.widget.TextView;
 
 import com.brandenwilson.shoppinglist.R;
@@ -26,6 +27,18 @@ public class ItemDetailFragment extends BaseFragment implements ItemDetailView {
     @Override
     protected int getLayoutID() {
         return R.layout.fragment_item_detail;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        interactionHandler.registerView(this);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        interactionHandler.updateView();
     }
 
     @Override
