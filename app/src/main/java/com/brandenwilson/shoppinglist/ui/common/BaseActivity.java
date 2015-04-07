@@ -52,12 +52,6 @@ public abstract class BaseActivity extends ActionBarActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        objectGraphHolder.release();
-    }
-
-    @Override
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
         onViewCreated();

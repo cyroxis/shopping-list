@@ -30,7 +30,9 @@ public class ContentActivity extends BaseActivity {
         setTitle("Hello World");
 
         ObjectGraphHolder.inject(this);
-        getFragmentContainer().showFragment(new ItemsFragment());
+
+        if (savedInstanceState == null)
+            getFragmentContainer().showFragment(new ItemsFragment());
     }
 
     @Override

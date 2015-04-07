@@ -29,13 +29,6 @@ public class ItemsFragment extends BaseFragment implements ItemsView {
     ItemsAdapter itemsAdapter = new ItemsAdapter();
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        interactionHandler.registerView(this);
-    }
-
-    @Override
     protected List<? extends Object> getFragmentModules() {
         return Arrays.asList(new ItemsModule());
     }
@@ -63,6 +56,8 @@ public class ItemsFragment extends BaseFragment implements ItemsView {
                 interactionHandler.itemSelected(itemsAdapter.getItem(position));
             }
         });
+
+        interactionHandler.registerView(this);
     }
 
     @Override

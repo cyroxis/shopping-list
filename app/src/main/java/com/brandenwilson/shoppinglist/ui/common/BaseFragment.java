@@ -1,6 +1,5 @@
 package com.brandenwilson.shoppinglist.ui.common;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -24,10 +23,9 @@ public abstract class BaseFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        ObjectGraphHolder.inject(activity, this, getFragmentModules().toArray());
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ObjectGraphHolder.inject(getActivity(), this, getFragmentModules().toArray());
     }
 
     @Nullable
