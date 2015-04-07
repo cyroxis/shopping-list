@@ -8,10 +8,12 @@ import com.brandenwilson.shoppinglist.core.common.models.Item;
 import com.brandenwilson.shoppinglist.core.modules.itemdetail.ItemDetailView;
 import com.brandenwilson.shoppinglist.ui.common.BaseFragment;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import butterknife.InjectView;
-import dagger.ObjectGraph;
 
 public class ItemDetailFragment extends BaseFragment implements ItemDetailView {
 
@@ -48,7 +50,7 @@ public class ItemDetailFragment extends BaseFragment implements ItemDetailView {
     }
 
     @Override
-    protected void onInjectDependencies(ObjectGraph objectGraph) {
-        super.onInjectDependencies(objectGraph.plus(new ItemDetailModule()));
+    protected List<? extends Object> getFragmentModules() {
+        return Arrays.asList(new ItemDetailModule());
     }
 }

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.dependency.ActivityModule;
+import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
 import com.brandenwilson.shoppinglist.ui.common.BaseActivity;
 import com.brandenwilson.shoppinglist.ui.items.ItemsFragment;
 
@@ -28,6 +29,7 @@ public class ContentActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         setTitle("Hello World");
 
+        ObjectGraphHolder.inject(this);
         getFragmentContainer().showFragment(new ItemsFragment());
     }
 

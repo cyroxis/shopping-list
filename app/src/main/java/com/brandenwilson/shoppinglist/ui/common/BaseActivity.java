@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.brandenwilson.shoppinglist.R;
 import com.brandenwilson.shoppinglist.ShoppingListApplication;
+import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +21,7 @@ import dagger.ObjectGraph;
 
 public abstract class BaseActivity extends ActionBarActivity {
 
-    private ObjectGraph objectGraph;
+    private ObjectGraphHolder objectGraphHolder;
 
     // Making this final because this is not the onCreate you want to override
     @Override
@@ -32,7 +33,6 @@ public abstract class BaseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         createObjectGraph();
-        onInjectDependencies(objectGraph);
     }
 
     protected void onInjectDependencies(ObjectGraph objectGraph) {
@@ -40,15 +40,11 @@ public abstract class BaseActivity extends ActionBarActivity {
     }
 
     private void createObjectGraph() {
-        objectGraph = getShoppingListApplication().getApplicationObjectGraph().plus(getActivityModules().toArray());
+        objectGraphHolder = new ObjectGraphHolder(ObjectGraphHolder.from(getApplication()), getActivityModules().toArray());
     }
 
     protected List<? extends Object> getActivityModules() {
         return Collections.emptyList();
-    }
-
-    public ObjectGraph getActivityObjectGraph() {
-        return objectGraph;
     }
 
     protected ShoppingListApplication getShoppingListApplication() {
@@ -58,7 +54,7 @@ public abstract class BaseActivity extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        objectGraph = null;
+        objectGraphHolder.release();
     }
 
     @Override
@@ -95,5 +91,14 @@ public abstract class BaseActivity extends ActionBarActivity {
 
     public FragmentContainer getFragmentContainer() {
         return new FragmentContainer(getFragmentManager(), R.id.frame_main_content);
+    }
+
+    @Override
+    public Object getSystemService(String name) {
+        if (ObjectGraphHolder.isObjectGraphService(name)) {
+            return objectGraphHolder;
+        } else {
+            return super.getSystemService(name);
+        }
     }
 }

@@ -9,28 +9,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
+
+import java.util.Collections;
+import java.util.List;
+
 import butterknife.ButterKnife;
-import dagger.ObjectGraph;
 
 public abstract class BaseFragment extends Fragment {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        onInjectDependencies(getBaseActivity().getActivityObjectGraph());
-    }
-
-    protected void onInjectDependencies(ObjectGraph objectGraph) {
-        objectGraph.inject(this);
+    protected List<? extends Object> getFragmentModules() {
+        return Collections.emptyList();
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
-        if (!(activity instanceof BaseActivity))
-            throw new IllegalArgumentException("Activity must extends " + BaseActivity.class.getSimpleName());
+        ObjectGraphHolder.inject(activity, this, getFragmentModules().toArray());
     }
 
     @Nullable
@@ -44,9 +41,4 @@ public abstract class BaseFragment extends Fragment {
 
     @LayoutRes
     protected abstract int getLayoutID();
-
-    public BaseActivity getBaseActivity() {
-        return (BaseActivity) getActivity();
-    }
-
 }

@@ -3,23 +3,29 @@ package com.brandenwilson.shoppinglist;
 import android.app.Application;
 
 import com.brandenwilson.shoppinglist.dependency.ApplicationModule;
+import com.brandenwilson.shoppinglist.dependency.ObjectGraphHolder;
 
-import dagger.ObjectGraph;
 import timber.log.Timber;
 
 public class ShoppingListApplication extends Application {
 
-    private ObjectGraph objectGraph;
+    ObjectGraphHolder objectGraphHolder;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        objectGraph = ObjectGraph.create(new ApplicationModule());
+
+        objectGraphHolder = new ObjectGraphHolder(new ApplicationModule());
 
         Timber.plant(new Timber.DebugTree());
     }
 
-    public ObjectGraph getApplicationObjectGraph() {
-        return objectGraph;
-    };
+    @Override
+    public Object getSystemService(String name) {
+        if (ObjectGraphHolder.isObjectGraphService(name)) {
+            return objectGraphHolder;
+        } else {
+            return super.getSystemService(name);
+        }
+    }
 }
